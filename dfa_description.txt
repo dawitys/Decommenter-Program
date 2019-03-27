@@ -1,0 +1,52 @@
+-------------------
+1  -   IN_RAW_CODE
+
+This State represents That the current code is pure excutable code.
+-----------------
+2  -   TO_START_A_COMMENT
+
+This state is where "/" is encounterd and it is ready to get to 
+
+IN_COMMENT state when * is found next
+----------------- 
+
+3  -   IN_COMMENT
+
+This state represents the comment part which is is ignored by the compiler
+
+-----------------
+
+4  -   TO_END_A_COMMENT
+
+This state begin when "*" is found and it refers the current comment is about to end when "/" is encounterd.
+
+-----------------
+
+5  -   IN_STRING
+
+This State indicate the current code is string constant
+
+----------------- 
+
+6  -   STRING_ESCAPE
+
+This State indicate the current code is escape string constant
+
+-----------------
+
+7  -   IN_CHAR
+
+This State indicate the current code is character constant
+
+-----------------
+
+8  -   CHAR_ESCAPE
+
+This State indicate the current code is escape character constant
+
+-----------------
+
+
+
+
+
