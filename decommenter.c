@@ -7,13 +7,11 @@
                    - Daniel Geremew (ATR/8104/09)
 */
 
-
 #include<stdio.h>
 #include<ctype.h>
 #include<stdlib.h>
 
 /*  a global enum to keep track of the state declared as 'State' */
-
 typedef enum StateEnum {
     IN_RAW_CODE,
     TO_START_A_COMMENT, 
@@ -26,7 +24,6 @@ typedef enum StateEnum {
 } State;
 
 /*  function declarations that are used to handle each state  */
-
 void handleInRawCodeState(State *state, char in);
 void handleInStringState(State *state, char in);
 void handleStringEscapeState(State *state, char in);
@@ -40,7 +37,6 @@ void countLine(int *line, char in);
 void checkCompletion(State *state, int lastCommentline);
 
 /*  takes input as characters and removes comments  */
-
 void main(){
 
     State state = IN_RAW_CODE;
@@ -88,7 +84,6 @@ void main(){
 
 /*  writes out the 'in' argument if it's not in TO_START_A_COMMENT state
     and changes the state to appropriate states based on 'in' content.*/
-
 void handleInRawCodeState(State *state, char in) {
     
     if (in == '\"') {
@@ -108,7 +103,6 @@ void handleInRawCodeState(State *state, char in) {
 
 /*  writes out characters entered that are within a " ". 
     changes state to appropriate state depending on the "in" content  */
-
 void handleInStringState(State *state, char in) {
 
     if (in == '\\') {
@@ -123,7 +117,6 @@ void handleInStringState(State *state, char in) {
 
 /*  writes out characters entered that are escaped strings and 
     changes state to IN_STRING  */
-
 void handleStringEscapeState(State *state, char in) {
 
     *state = IN_STRING;
@@ -133,7 +126,6 @@ void handleStringEscapeState(State *state, char in) {
 
 /*  writes out characters entered that are within a ' '. 
     changes state to appropriate state depending on the "in" content  */
-
 void handleInCharState(State *state, char in) {
 
     if (in == '\\') {
@@ -148,7 +140,6 @@ void handleInCharState(State *state, char in) {
 
 /*  writes out characters entered that are escaped chars and 
     changes state to IN_CHAR  */
-
 void handleCharEscapeState(State *state, char in) {
 
     *state = IN_CHAR;
@@ -159,7 +150,6 @@ void handleCharEscapeState(State *state, char in) {
 /*  handles the /* characters which show beginning of a comment. 
     changes state to appropriate state depending on the "in" content 
     And the line at which unterminated comment started will be tracked */
-
 void handleToStartACommentState(State *state, char in,int *commentStartLine,int *curruntLine) {
 
     if (in == '*') {
@@ -186,7 +176,6 @@ void handleToStartACommentState(State *state, char in,int *commentStartLine,int 
 
 /*  excludes lines that are comment from the print stream. 
     changes state to approptiate states depending on the conditions met */
-
 void handleInCommentState(State *state, char in) {
 
     if (in == '*') {
@@ -201,7 +190,6 @@ void handleInCommentState(State *state, char in) {
 
 /*  handeles end of a comment ( * /) and 
     changes state to appropriate state based on the contents of in  */
-
 void handleToEndACommentState(State *state, char in) {
 
     if (in == '/') {
@@ -220,7 +208,6 @@ void handleToEndACommentState(State *state, char in) {
 
 /*  check if there are any incomplete comments in the file and 
     throw an error with the corresponding line number  */
-
 void checkCompletion(State *state, int lastCommentline) {
 
     if (*state == IN_COMMENT || *state == TO_END_A_COMMENT) {
@@ -230,7 +217,6 @@ void checkCompletion(State *state, int lastCommentline) {
 }
 
 /* Keeps track of lines processed  */ 
-
 void countLine(int *line, char in) {
 
     if (in == '\n') {
