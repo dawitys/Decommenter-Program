@@ -1,7 +1,8 @@
-## Decommenter-Program
+### Decommenter-Program
+
 Perform the de-commenting task of gcc(or other c compile)
 
-##Limitations
+## Limitations
 this program will report error if there is unterminated comment.
 But this will happen at runtime and it will not be indicated before
 decommenting process.
