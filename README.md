@@ -1,8 +1,8 @@
-### Decommenter-Program
+## Decommenter-Program
 
 Perform the de-commenting task of gcc(or other c compile)
 
-## Limitations
+### Limitations
 this program will report error if there is unterminated comment.
 But this will happen at runtime and it will not be indicated before
 decommenting process.
@@ -10,7 +10,7 @@ decommenting process.
 
 -------------- 
 
-project 01 : De-comment Program
+# project 01 : De-comment Program
 
 Group Members
 
@@ -25,7 +25,7 @@ and helped us as a reference when implementing with code.
 We used 20 miniutes to design the dfa,and few more to implement the code.
 Our classmates have helped in introducing and implementation of the DFA. 
 The code works based on guidelines specified by the assignment document.
-works with /**/ type comments.
+works with /* comment */ type comments.
 
 
 
