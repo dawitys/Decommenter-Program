@@ -2,15 +2,18 @@
 
 Perform the de-commenting task of gcc(or other c compile)
 
+
+This is DFA for the program
+![](updated_dfa.jpg)
+
+
+
 ### Limitations
 this program will report error if there is unterminated comment.
 But this will happen at runtime and it will not be indicated before
 decommenting process.
 
-This is DFA for the program
-![](updated_dfa.jpg)
-
--------------- 
+---------------------------------********---------------------------------
 
 # project 01 : De-comment Program
 
@@ -29,8 +32,4 @@ Our classmates have helped in introducing and implementation of the DFA.
 The code works based on guidelines specified by the assignment document.
 works with /* comment */ type comments.
 
-
-
-
--------------------------------------------------------
-
+------------------------------******----------------------------------
