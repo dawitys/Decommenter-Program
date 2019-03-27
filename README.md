@@ -7,6 +7,8 @@ this program will report error if there is unterminated comment.
 But this will happen at runtime and it will not be indicated before
 decommenting process.
 
+This is DFA for the program
+![](updated_dfa.jpg)
 
 -------------- 
 
